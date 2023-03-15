@@ -1,0 +1,29 @@
+name: Check Streak
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 * * *
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    env: 
+      CI_COMMIT_MESSAGE: Reset current streak
+      CI_COMMIT_AUTHOR: Streak Reaper
+      CI_COMMIT_EMAIL: streak-reaper@noreply.com
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+        
+      - name: Check Streak
+        run: ./scripts/check-daily-commits.sh
+        shell: sh
+        
+      - name: Commit and push or exit
+        run: |
+          git diff --exit-code --quiet && exit 0
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+          git push
