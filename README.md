@@ -1,7 +1,7 @@
-# {Code}-a-day
+# Py-a-day
 
-![Longest streak](https://img.shields.io/badge/Longest_streak-1-green)
-![Current streak](https://img.shields.io/badge/Current_streak-1-green)
+![Longest streak](https://img.shields.io/badge/Longest_streak-2-green)
+![Current streak](https://img.shields.io/badge/Current_streak-2-green)
 ![Finished programs](https://img.shields.io/badge/Finished_programs-0-yellow)
 
 Repository for storing code written as part of a {Code}-a-day project.
