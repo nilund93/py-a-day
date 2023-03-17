@@ -8,8 +8,8 @@ from random import choice, randint
 ANGLES = [0, 90, 180, 270]
 kevin = t.Turtle()
 kevin.shape("arrow")
-kevin.speed = 10
-kevin.pensize = 20
+kevin.speed(10)
+kevin.pensize(20)
 kevin.color("black")
 t.colormode(255)
 kevin.width(5)
