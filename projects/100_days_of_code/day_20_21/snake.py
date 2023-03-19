@@ -17,12 +17,21 @@ class Snake:
     def initialize(self):
         x = 0
         for _ in range(3):
-            temp_turtle = Turtle(shape="square")
-            temp_turtle.color("white")
-            temp_turtle.penup()
-            temp_turtle.goto(x, 0)
-            self.body.append(temp_turtle)
+            self.add_segment((x, 0))
         x-=20
+    
+    def add_segment(self, position):
+        
+        temp_turtle = Turtle(shape="square")
+        temp_turtle.color("white")
+        temp_turtle.penup()
+        temp_turtle.goto(position[0], position[1])
+        self.body.append(temp_turtle)
+    
+    def extend(self):
+        # add a new segment to the snake
+        self.add_segment(self.body[-1].position())
+    
         
     def move(self):
         for seg_num in range(len(self.body)-1, 0, -1):
@@ -43,13 +52,3 @@ class Snake:
     def down(self):
         if self.head.heading() != UP:
             self.head.setheading(DOWN)    
-
-class Food:
-    
-    def __init__(self) -> None:
-        pass
-    
-class Scoreboard:
-    
-    def __init__(self) -> None:
-        pass
