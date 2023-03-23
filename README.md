@@ -1,6 +1,6 @@
 # Py-a-day
 
-![Longest streak](https://img.shields.io/badge/Longest_streak-7-green)
+![Longest streak](https://img.shields.io/badge/Longest_streak-8-green)
 ![Current streak](https://img.shields.io/badge/Current_streak-8-green)
 ![Finished programs](https://img.shields.io/badge/Finished_programs-8-yellow)
 
