@@ -52,7 +52,7 @@ def start_timer():
 #     print(thing)
     
 def count_down(count):
-    global timer
+    global timer, check_marks
     
     minutes = count // 60
     seconds = count % 60
