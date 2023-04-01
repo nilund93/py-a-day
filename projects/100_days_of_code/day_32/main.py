@@ -1,24 +1,18 @@
-# Gmail: smtp.gmail.com
-# Hotmail: smtp.live.com
-# Outlook: outlook.office365.com
-# Yahoo: smtp.mail.yahoo.com
-# If you use another email provider, just Google for your email provider e.g. "Gmail SMTP address"
-
 import smtplib
-# smtplib.SMTP("smtp.gmail.com", port=587)
+import datetime as dt
+
 MY_EMAIL = ""
 PASSWORD = ""
 DESTINATION = ""
 
-# this can be done with a context manager
-# aka with-keyword
-connection = smtplib.SMTP("smtp.gmail.com", port=587)
-connection.starttls()
-connection.login(user=MY_EMAIL, password=PASSWORD)
-connection.sendmail(from_addr=MY_EMAIL, 
-                    to_addrs=DESTINATION, 
-                    msg="This is a message.")
-connection.close()
+def send_email():
+    with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+        connection.starttls()
+        connection.login(user=MY_EMAIL, password=PASSWORD)
+        connection.sendmail(from_addr=MY_EMAIL, 
+                            to_addrs=DESTINATION, 
+                            msg="This is a message.")
+
 
 
 """
