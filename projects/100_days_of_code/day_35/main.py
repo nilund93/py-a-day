@@ -24,4 +24,4 @@ for hour_data in weather_slice:
     
 if will_rain:
     print("bring umbrella")
-# print(data["hourly"][0]["weather"][0]["id"])
+print(data["hourly"][0]["weather"][0]["id"])
